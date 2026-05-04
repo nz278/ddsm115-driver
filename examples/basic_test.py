@@ -1,9 +1,9 @@
 import time
-from src.ddsm115.controller import DDSM115Controller
-from src.ddsm115.motor import DDSM115
-from src.ddsm115.transport import SerialTransport
+from ddsm115 import DDSM115, DDSM115Controller
+from ddsm115.transport import SerialTransport
 
 transport = SerialTransport("/dev/tty.usbserial-BG02Q0ZT")
+
 
 def main():
     fl = DDSM115(1, transport, direction=-1)
