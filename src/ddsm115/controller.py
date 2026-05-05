@@ -1,6 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
-from src.ddsm115 import DDSM115
-
+from ddsm115 import DDSM115
 
 # Controller for running multiple motors simultaneously
 class DDSM115Controller:
