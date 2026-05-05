@@ -1,4 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor
 from ddsm115 import DDSM115
 
 # Controller for running multiple motors simultaneously
