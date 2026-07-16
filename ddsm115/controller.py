@@ -21,10 +21,20 @@ class DDSM115Controller:
 
     # Send same command to multiple motors simultaneously
     def _run_all(self, method_name: str, *args, **kwargs):
-        return [
-            getattr(motor, method_name)(*args, **kwargs)
-            for motor in self.motors.values()
-        ]
+        results = []
+        error = None
+
+        for motor in self.motors.values():
+            try:
+                results.append(getattr(motor, method_name)(*args, **kwargs))
+            except Exception as e:
+                if error is None:
+                    error = e
+
+        if error is not None:
+            raise error
+
+        return results
 
     def set_mode_velocity_all(self):
         return self._run_all("set_mode_velocity")
