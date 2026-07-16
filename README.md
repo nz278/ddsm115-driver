@@ -6,7 +6,7 @@ Python library for controlling Waveshare DDSM115 servo motors over RS485 serial 
 - Set modes
 - Send speed, current/torque, position commands
 - Receive motor feedback
-- Control individual motors or multiple simultaneously
+- Control individual motors or multiple over shared bus
 
 ## Installation
 pip install -r requirements.txt  
