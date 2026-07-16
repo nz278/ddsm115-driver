@@ -25,6 +25,7 @@ class DDSM115:
         for _ in range(5):
             self.transport.write(frame, read_reply=False)
 
+        self.motor_id = motor_id
 
     def id_query(self):
         frame = bytes([0xC8, 0x64, 0, 0, 0, 0, 0, 0, 0, 0xDE])
